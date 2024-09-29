@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Copy-papajohns</title>
+</head>
+
+<body>
+    <header>
+        <div id="sebetopen" style="display: none;" class="sebet-main h-[100vh] fixed inset-0 z-50 w-full bg-[#fff]">
+            <div class="sebet-content p-2">
+                <div class="sebet-head flex items-center justify-between w-[90%]  ">
+                    <h2 class="text-[42px] font-bold">Səbət</h2>
+                    <span onclick="sebetbagla()" class="text-[16px] font-bold">Bagla <i
+                            class="fa-solid fa-circle-xmark"></i></span>
+                </div>
+                <div class="mehsul-say flex items-start justify-start  w-[90%]">
+                    <span id="say">Səbətinizdə məhsulların sayı: 0</span>
+                </div>
+                <div id="meshullarelavesi" class="sebet-elaveler max-h-[300px]  overflow-hidden overflow-y-scroll">
+               
+                </div>
+                
+                <div class="umum-meb flex items-center justify-center flex-col pt-4">
+                    <p  id="mobumcem" class="text-[20px] font-bold">Ümumi məbləğ: 0₼ </p>
+                    <a href="#"
+                        class="bg-[#AD0F14] p-2 text-white text-[18px] font-bold uppercase flex items-center justify-center rounded-md w-[100%]">Menyuya
+                        keçin</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        </div>
+        <div class="login-blok fixed inset-0  z-40 hidden" id="login-overlay">
+        
+            <div class="bg-black opacity-50 absolute inset-0 z-10"></div>
+        
+           
+            <div id="login" class="login-main z-20 relative top-[20%] p-4 w-full lg:w-[30%] lg:left-[35%]   bg-[#fff]">
+                <div class="sebet-head px-4 pt-4 h-[10vh] flex items-center justify-between w-[90%]">
+                    <h2 class="text-[22px] font-bold">Giriş</h2>
+                    <h2 class="text-[22px] font-bold">Qeydiyyat</h2>
+                    <span onclick="clossebet()" class="text-[16px] font-bold">Bagla <i class="fa-solid fa-circle-xmark"></i></span>
+                </div>
+                <div class="login-media flex flex-col items-center justify-center p-2 w-full">
+                    <a href="#" class="bg-[#3B5998] text-white p-2 rounded-md w-full flex items-center justify-center text-[16px] font-bold">
+                        <i class="fa-brands fa-facebook-f text-[20px] mx-2"></i>Facebook ilə daxil ol
+                    </a>
+                    <div class="diger-giris w-full flex items-start flex-col justify-start p-4">
+                        <p class="text-[14px]">Tel. nömrəsi və ya Email ilə daxil ola bilərsiniz</p>
+                        <div class="giris-method flex items-center gap-2 w-full justify-center flex-row py-4">
+                            <span class="bg-[#0F9675] flex items-center justify-center w-[50%] h-[32px] text-white rounded-md text-[15px] text-center font-bold" onclick="numgo()">Telefon nömrəniz</span>
+                            <span class="bg-[#F1F1F1] flex items-center justify-center w-[50%] h-[32px] text-black rounded-md text-[15px] text-center font-bold" onclick="emailgo()">E-mail ünvanınız</span>
+                        </div>
+                    </div>
+                    <div class="login-input flex items-start w-[90%] justify-start flex-col gap-4">
+                        <label id="numre" style="display: flex;" class="flex w-full flex-col items-start justify-start">
+                            Telefon nömrəsi
+                            <input type="number" class="border mt-2 h-[39px] w-[90%] outline-none border-[#000] rounded-md">
+                        </label>
+                        <label id="email" style="display: none;" class="flex w-full flex-col items-start justify-start">
+                            E-mail ünvanınız
+                            <input type="email" class="border mt-2 h-[39px] w-[90%] outline-none border-[#000] rounded-md">
+                        </label>
+                        <label class="flex w-full flex-col items-start justify-start">
+                            Şifrə
+                            <input type="number" class="border mt-2 h-[39px] w-[90%] outline-none border-[#000] rounded-md">
+                        </label>
+                        <div class="login-input2 w-full flex items-center justify-between">
+                            <span><input type="checkbox">Məni yadda saxla</span>
+                            <a href="#" class="text-[#0F9675]">Şifrəni unutmusunuz?</a>
+                        </div>
+                        <div class="buttons flex items-end justify-end w-full">
+                            <button class="rounded-md border-none w-[30%] text-white h-[39px] bg-[#AD0F14]">Daxil ol</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="head-top  flex items-center justify-center gap-10 w-full p-2 mt-2 ">
+
+            <a class="logo w-[68px]  flex items-center justify-center">
+                <img src="img/logo.png" class="w-[100%] object-cover m-2" alt="">
+            </a>
+
+            <div class="left flex items-end justify-between gap-5">
+                <div class="lang w-[25px] translate-y-[-3px] ">
+                    <span class="flex flex-col items-center justify-center text-[15px] font-bold text-[15px] "> <img
+                            src="img/az.png" class="w-[90%] min-w-[40%]  object-cover " alt=""> Az</span>
+                </div>
+                <span onclick="openLogin()" class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> Giriş <i
+                        class="fa-solid fa-user"></i></span>
+                <span onclick="opensebet()"
+                    class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> 0 ₼ <i
+                        class="fa fa-shopping-basket" aria-hidden="true"></i></span>
+            </div>
+        </div>
+
+        <div class="header-bottom  bg-[#AD0F14] w-full flex h-[45px]">
+            <div
+                class="menu-silde flex items-center justify-center  overflow-hidden overflow-y-hidden overflow-x-scroll  pt-[18px] pb-[50px]">
+                <ul id="menumobil"
+                    class="  flex items-center ml-[30px] px-[30px] justify-start px-[40px]  min-w-[571px] m-[unset] gap-5  text-white ">
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="dekstop-bar flex  flex-row items-center justify-between mt-[20px]">
+            <div class="dekstop-head pl-[210px]  flex flex-row items-center justify-between">
+                <div class="left flex items-center justify-center gap-5 ">
+                    <h3 class="text-[23px] font-bold">Restoranlar</h3>
+                    <h3 class="text-[23px] font-bold">PapaBonus</h3>
+                </div>
+
+            </div>
+            <div class="rght flex flex-row items-center">
+                <div class="imgs flex items-center justify-center">
+                    <img class="w-[33px] " src="img/az.png" alt="">
+                </div>
+                <div class="text flex flex-row items-center justify-between gap-4 mx-4">
+                    <p class="text-[20px] font-bold">Azərbaycanca</p>
+                    <p class="text-[20px] font-bold" onclick="openLogin()">Giriş /Qeydiyyat <i
+                            class="fa-solid fa-sort-down text-[20px] mx-2"></i></p>
+                    <span onclick="desktopopenn()"
+                        class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> 0 ₼ <i
+                            class="fa fa-shopping-basket text-[23px]" aria-hidden="true"></i></span>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="desktopsebet" style="display: none;" class="fixed inset-0 z-50 flex items-center justify-center">
+
+            <div class="bg-black opacity-50 absolute inset-0"></div>
+
+
+            <div class="sebet-content p-2 bg-[#fff] w-[40%] relative z-[2] top-[250px] left-[30%]">
+                <div class="sebet-head flex items-center px-2 justify-between w-[95%]">
+                    <h2 class="text-[42px] font-bold">Səbət</h2>
+                    <span onclick="desclosd()" class="text-[16px] font-bold">Bağla <i
+                            class="fa-solid fa-circle-xmark"></i></span>
+                </div>
+
+                <div class="mehsul-say flex items-start justify-start px-2 w-[90%]">
+                    <span id="saydes">2Səbətinizdə məhsulların sayı: 0</span>
+                </div>
+                <div id="desktopmehsuleal" class="sebet-elaveler max-h-[300px]  overflow-hidden overflow-y-scroll"></div>
+
+                <div class="umum-meb flex items-center justify-between flex-row px-2 py-12">
+                    <a href="#"
+                        class="bg-[#AD0F14] p-2 text-white text-[18px] font-bold uppercase flex items-center justify-center mx-4 rounded-md w-[30%]">Menyuya
+                        keçin</a>
+                    <p id="umummebcem" class="text-[20px] font-bold">Ümumi məbləğ: 0₼</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-bar-des  flex bg-[#AD0F14]  items-center justify-center flex pt-[32px] pb-[32px] relative  ">
+            <a class="desk-logo flex items-center justify-center absolute left top-[-30px] left-[-180px]   pt-[20px] ">
+                <img src="img/logo.png" class="w-[40%]   " alt="">
+            </a>
+            <ul id="menudes" class="flex items-center justify-end gap-4 w-full px-3  text-white ">
+               
+            </ul>
+            <p class="w-[10%] font-bold text-white  text-[30px]">0 bal <i class="fa-solid fa-circle-question"></i></p>
+        </div>
+
+    </header>
+    <main>
+        <div class="prom-kod bg-[#f1f1f1] w-full py-[18px] flex items-center justify-center lg:w-[95%] lg:mx-auto my-4">
+            <div class="kod-content  w-full flex items-center justify-center flex-row">
+                <p class="text-[27px] textprm font-bold px-3">Promo kodunuz var?<span class="text-[#0F9675]"> Endirimdən
+                        istifadə edin!</span>
+                </p>
+                <input type="text" class="border border-[#0F9675] rounded-md h-[39px] px-[10px] text-black text-[18px]"
+                    placeholder="Promo kodu daxil edin"> <a
+                    class="bg-[#0F9675] flex items-center rounded-md font-bold justify-center text-[18px] text-white h-[39px] p-[10px]  w-[10%] lg:w-[5%] mx-[20px] uppercase text-center">Ok</a>
+            </div>
+        </div>
+       
+         
+       <div class="silder-main p-2 w-[95%]  flex items-center justify-center mx-auto">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+
+                <div class="slider-img flex items-center w-full justify-center ">
+                    <img src="img/silder1.png" class="w-[100%] object-cover h-full" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider2.png " class="w-[100%] object-cover" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider3.png" class="w-[100%] object-cover" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider4.png" class="w-[100%] object-cover" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/sldier5.png" class="w-[100%] object-cover" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider6.jpg" class="w-[100%]  object-cover" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider7.png" class="w-[100%] object-cover" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide flex items-center justify-center">
+                <div class="slider-img w-[100%]  ">
+                    <img src="img/slider8.jpg" class="w-[100%] object-cover" alt="">
+                </div>
+              </div>
+        
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+       </div>
+        
+    </main>
+    <footer class="py-6  bg-[#AD0F14]">
+        <div
+            class="  lg:hidden container px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
+            <div class="grid grid-cols-12">
+
+                <div class="col-span-6 text-center md:text-left md:col-span-3">
+                    <p class="pb-1 text-[18px] font-bold text-white">Haqqımızda</p>
+                    <ul>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Sual-Cavab</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Karyera</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Xəmir</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[16px] font-bold text-white">Papa Talk
+                                - Şərtlər və Qaydalar</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-span-6 text-center md:text-left md:col-span-3">
+                    <p class="pb-1 text-[18px] font-bold text-white">Restoranlar</p>
+                    <ul>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Kampaniyalar</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">PapaBonus</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="grid justify-center pt-6 lg:justify-between border-none">
+                <div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
+                    <div class="bg-foot pb-[20px]">
+                        <img src="img/footer-images-az-AZ.png " alt="">
+                    </div>
+                    <div class="social flex items-center justify-center flex-row gap-5">
+                        <i class="fa-brands fa-facebook-f text-white text-[22px]"></i>
+                        <i class="fa-brands fa-twitter text-white text-[22px]"></i>
+                        <i class="fa-brands fa-instagram text-white text-[22px]"></i>
+                        <img src="img/tripadvisor (1).png" class="w-[30px] h-[30px] object-cover" alt="">
+                    </div>
+                </div>
+                <div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                    <span class="text-[19px] font-bold text-white">© PJA 2024</span>
+                </div>
+            </div>
+        </div>
+        <div
+            class="container w-full lg:grid  hidden px-6 mx-auto space-y-6 divide-y dark:divide-gray-600 md:space-y-12 divide-opacity-50">
+            <div class="flex justify-between items-center ">
+                <div class="text-center flex items-center justify-center  w-[60%]">
+                    <div class="flex justify-center md:w-1/4">
+                        <span class="text-[19px] font-bold text-white">© PJA 2024</span>
+                    </div>
+                    <ul class="flex flex-row  w-full items-center justify-center gap-2">
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Haqqımızda</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Sual-Cavab</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Karyera</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[18px] font-bold text-white">Xəmir</a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer" href="#"
+                                class="hover:dark:text-violet-600 pb-[20px] text-[16px] font-bold text-white">Papa Talk
+                                - Şərtlər və Qaydalar</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="flex w-[50%] flex-row items-center justify-center gap-4">
+
+                    <img src="img/footer-images-az-AZ.png" alt="" class="border-r-2 border-r-[#eee] pr-4">
+
+                    <div class="social flex items-center justify-center flex-row gap-5">
+                        <i class="fa-brands fa-facebook-f text-white text-[22px]"></i>
+                        <i class="fa-brands fa-twitter text-white text-[22px]"></i>
+                        <i class="fa-brands fa-instagram text-white text-[22px]"></i>
+                        <img src="img/tripadvisor (1).png" class="w-[30px] h-[30px]  translate-y-[5px] object-cover"
+                            alt="">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">'  + "</span>";
+            },
+          },
+        });
+      </script>
+</body>
+
+</html>

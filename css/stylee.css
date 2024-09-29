@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.menu-silde {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.menu-silde::-webkit-scrollbar {
+    display: none; 
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-wrapper {
+    height: 500px; 
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-img img {
+    width: 100%;
+    height: 100%;
+   
+}
+
+.swiper-pagination-bullet{
+    width: 10px!important;
+    height: 10px!important;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+   
+    background: #F1F1F1;
+    border: 1px solid #0F9675!important;
+  }
+
+
+  .swiper-pagination-bullet-active {
+
+    background: #0F9675!important;
+  }
+
+
+
+  @media only screen and (min-width: 767px) {
+    
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  .swiper-pagination-bullet{
+    width: 22px!important;
+    height: 22px!important;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+   
+    background: #F1F1F1;
+    border: 1px solid #0F9675!important;
+  }
+
+
+  .swiper-pagination-bullet-active {
+
+    background: #0F9675!important;
+  }
+  }
+@media (max-width: 1200px) {
+    .dekstop-bar{
+        display: none!important;
+    }
+    .dekstop-head{
+        display:  none!important;
+    }
+    .menu-bar-des {
+        display: none!important;
+    }
+   
+    .head-top {
+        display: flex;
+    }
+    .header-bottom {
+        display: flex;
+    }
+    .textprm{
+        display: none;
+    }
+    
+    
+}
+
+
+@media (min-width: 1201px) {
+    .dekstop-bar{
+        display: flex;
+    }
+    .dekstop-head{
+        display: flex;
+    }
+    .menu-bar-des {
+        display: flex;
+    }
+    .head-top {
+        display: none!important;
+    }
+    .header-bottom {
+        display:none!important;
+    }
+    .textprm{
+        display: block;
+    }
+}
+
+

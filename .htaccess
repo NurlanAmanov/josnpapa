@@ -1,0 +1,7 @@
+# RewriteEngine on to enable URL rewriting
+RewriteEngine On
+
+# Remove .htm extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.htm -f
+RewriteRule ^(.*)$ $1.htm [L]

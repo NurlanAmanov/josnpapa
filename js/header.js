@@ -1,9 +1,9 @@
 const catagory=[]
 
 
-fetch("http://localhost:3000/category")
+fetch("https://papajson.vercel.app/category")
 
-fetch("http://localhost:3000/category")
+fetch("https://papajson.vercel.app/category")
 .then(res=> res.json())
 .then(cats =>{
   

@@ -5,7 +5,7 @@ const   MEHSUL = []
 const contentinfo = document.getElementById("contentinfo")
 const minisebet = document.getElementById("minisebet")
 const minimobsebet = document.getElementById("minimobsebet")
-fetch(`http://localhost:3000/${catagorss}/${id}`)
+fetch(`https://papajson.vercel.app/${catagorss}/${id}`)
     .then(res => res.json())
     .then(data => {
         MEHSUL.push(data)

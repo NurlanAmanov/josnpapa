@@ -1,6 +1,6 @@
 const urls = window.location.search.split("=").at("-1")
 const Data=[]
-fetch(`http://localhost:3000/${urls}`)
+fetch(`https://papajson.vercel.app/${urls}`)
 
 
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,14 +102,14 @@
 
             <div class="left flex items-end justify-between gap-5">
                 <div class="lang w-[25px] translate-y-[-3px] ">
-                    <span class="flex flex-col items-center justify-center text-[15px] font-bold text-[15px] "> <img
+                    <span class="flex flex-col items-center justify-center font-bold text-[15px] "> <img
                             src="../img/az.png" class="w-[90%] min-w-[40%]  object-cover " alt=""> Az</span>
                 </div>
                 <span onclick="openLogin()"
                     class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> Giriş <i
                         class="fa-solid fa-user"></i></span>
                 <span onclick="opensebet()"
-                    class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> 0 ₼ <i
+                    class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"><p id="minimobsebet"></p><i
                         class="fa fa-shopping-basket" aria-hidden="true"></i></span>
             </div>
         </div>
@@ -119,7 +118,7 @@
             <div
                 class="menu-silde flex items-center justify-center  overflow-hidden overflow-y-hidden overflow-x-scroll  pt-[18px] pb-[50px]">
                 <ul id="menumobil"
-                    class="flex items-center ml-[30px] px-[30px] justify-start   min-w-[571px] m-[unset] gap-5  text-white ">
+                    class="  flex items-center ml-[30px] px-[30px] justify-start   min-w-[571px] m-[unset] gap-5  text-white ">
 
                 </ul>
             </div>
@@ -139,9 +138,10 @@
                 <div class="text flex flex-row items-center justify-between gap-4 mx-4">
                     <p class="text-[20px] font-bold">Azərbaycanca</p>
                     <p class="text-[20px] font-bold" onclick="openLogin()">Giriş /Qeydiyyat <i
-                            class="fa-solid fa-sort-down text-[20px] mx-2"></i></p>
+                            class="fa-solid fa-sort-down text-[20px] mx-2"></i>
+                        </p>
                     <span onclick="desktopopenn()"
-                        class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold"> 0 ₼ <i
+                        class="flex flex-col-reverse items-center justify-center text-[15px]  font-bold" > <p id="minisebet"></p> <i
                             class="fa fa-shopping-basket text-[23px]" aria-hidden="true"></i></span>
                 </div>
 
@@ -175,8 +175,9 @@
             </div>
         </div>
 
-        <div class="menu-bar-des   bg-[#AD0F14]  items-center justify-center flex pt-[32px] pb-[32px] relative  ">
-            <a href="../index.htm" class="desk-logo flex items-center justify-center absolute left top-[-30px] left-[-180px]   pt-[20px] ">
+        <div class="menu-bar-des  flex bg-[#AD0F14]  items-center justify-center flex pt-[32px] pb-[32px] relative  ">
+            <a href="../index.htm"
+                class="desk-logo flex items-center justify-center absolute left top-[-30px] left-[-180px]   pt-[20px] ">
                 <img src="../img/logo.png" class="w-[40%]   " alt="">
             </a>
             <ul id="menudes" class="flex items-center justify-end gap-4 w-full px-3  text-white ">
@@ -197,32 +198,10 @@
                     class="bg-[#0F9675] flex items-center rounded-md font-bold justify-center text-[18px] text-white h-[39px] p-[10px]  w-[10%] lg:w-[5%] mx-[20px] uppercase text-center">Ok</a>
             </div>
         </div>
-        <div class="product  pb-[40px] ">
-            <div class="prodvut-nav py-4">
-                <div class="prdouct-katag bg-[#F1F1F1] lg:w-[95%] lg:mx-auto">
-                    <ul class="flex items-center gap-2 justify-start flex-row mx-4   p-2">
-                        <li class="text-[14px] font-bold lg:text-[23px]"><a href="/az/menu/pizza">Hamısı</a></li>
-                        <li class="text-[14px] font-bold lg:text-[23px]"><a href="/az/menu/pizza/cheeken">Toyuqlu</a>
-                        </li>
-                        <li class="text-[14px] font-bold lg:text-[23px]"><a href="/az/menu/pizza/meat">Ət ilə</a>
-                        </li>
-                        <li class="text-[14px] font-bold lg:text-[23px]"> <a href="/az/menu/pizza/vegets">Vegetarian</a>
-                        </li>
-                        <li class="text-[14px] font-bold lg:text-[23px]"><a href="/az/menu/pizza/hot">Acılı</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <div id="mehsullar"
-                class="pizza-content  lg:pt-[40px] w-full flex items-center justify-center gap-4 flex-wrap ">
-            </div>
+        <div id="contentinfo">
 
         </div>
-        <div id="popmehsulsebet">
-
-        </div>
-
 
     </main>
     <footer class="py-6  bg-[#AD0F14]">
@@ -253,6 +232,8 @@
 
                     </ul>
                 </div>
+
+                <div id="popmehsulsebet"></div>
                 <div class="col-span-6 text-center md:text-left md:col-span-3">
                     <p class="pb-1 text-[18px] font-bold text-white">Restoranlar</p>
                     <ul>
@@ -335,14 +316,10 @@
 
             </div>
         </div>
-
-
     </footer>
-
-    <script src="../js/app.js"></script>
-    <script src="../js/mehsullar.js"></script>
     <script src="../js/mehsul-info.js"></script>
+    <script src="../js/app.js"></script>
     <script src="../js/header.js"></script>
+    <!-- <script src="../js/mehsullar.js"></script> -->
 </body>
-
 </html>
